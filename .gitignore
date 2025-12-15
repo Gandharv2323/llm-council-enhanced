@@ -8,14 +8,43 @@ wheels/
 
 # Virtual environments
 .venv
+venv/
+env/
 
 # Keys and secrets
 .env
+.env.*
+!.env.example
 
 # Data files
 data/
+*.sqlite
+*.db
 
 # Frontend
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+frontend/coverage/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/

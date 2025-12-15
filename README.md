@@ -4,6 +4,8 @@
 
 ![llmcouncil](header.jpg)
 
+Based on the original [llm-council](https://github.com/karpathy/llm-council) by **Andrej Karpathy** (@karpathy).
+
 LLM Council is a **deliberative AI engine** that makes model disagreement, confidence, and reasoning visible and measurable. Instead of getting one answer from one model, you get:
 
 - ✅ **Multiple models debate** your question

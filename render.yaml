@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: llm-council
+    env: docker
+    plan: free
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: OPENROUTER_API_KEY
+        sync: false
+    disk:
+      name: council-data
+      mountPath: /app/data
+      sizeGB: 1

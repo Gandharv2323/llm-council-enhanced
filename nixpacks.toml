@@ -1,0 +1,21 @@
+# LLM Council - Railway Deployment
+
+providers:
+  nixpacks
+
+[phases.setup]
+nixPkgs = ["python311", "nodejs_20"]
+
+[phases.install]
+cmds = [
+    "pip install -e .",
+    "cd frontend && npm ci"
+]
+
+[phases.build]
+cmds = [
+    "cd frontend && npm run build"
+]
+
+[start]
+cmd = "python -m backend.main"

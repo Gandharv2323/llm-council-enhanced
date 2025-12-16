@@ -14,7 +14,7 @@ FILES_PER_DAY = 15  # Increased to finish in ~4 days (Total ~55 files)
 PROJECT_DIR = r"c:\Users\shind\Downloads\To Move Files\llm-council-master"
 STATE_FILE = os.path.join(PROJECT_DIR, ".commit_state.json")
 # Update this with your actual repo URL
-REMOTE_URL = "https://github.com/StartCodingWithAi/llm-council-enhanced.git"
+REMOTE_URL = "https://github.com/Gandharv2323/llm-council-enhanced.git"
 
 # Files to commit (in order)
 ALL_FILES = [

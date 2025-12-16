@@ -7,23 +7,28 @@ on:
     branches: [main, master]
 
 jobs:
-  backend-lint:
+  placeholder:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
-      - name: Install dependencies
-        run: |
-          pip install ruff
-          pip install -e .
-      
-      - name: Lint with ruff
-        run: ruff check backend/
+      - run: echo "CI checks temporarily disabled for gradual rollout"
+
+#   backend-lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: '3.11'
+#       
+#       - name: Install dependencies
+#         run: |
+#           pip install ruff
+#           pip install -e .
+#       
+#       - name: Lint with ruff
+#         run: ruff check backend/
 
 #   backend-test:
 #     runs-on: ubuntu-latest

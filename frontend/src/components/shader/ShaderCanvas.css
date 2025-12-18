@@ -1,0 +1,175 @@
+.shader-canvas {
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+}
+
+/* Floating sphere container */
+.floating-sphere {
+  position: fixed;
+  z-index: 100;
+  pointer-events: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-sphere.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.floating-sphere.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.floating-sphere.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+/* Sidebar sphere */
+.sidebar-sphere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+/* Welcome sphere - centered in main area */
+.welcome-sphere {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 24px;
+  padding: 20px;
+}
+
+.welcome-sphere h2 {
+  color: #a1a1aa;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.welcome-sphere p {
+  color: #71717a;
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Floating animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
+  }
+}
+
+.shader-canvas:hover {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+
+/* Tablets and smaller (max-width: 768px) */
+@media (max-width: 768px) {
+  .floating-sphere.bottom-right {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .floating-sphere .shader-canvas {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .sidebar-sphere {
+    padding: 15px 0;
+  }
+
+  .sidebar-sphere .shader-canvas {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .welcome-sphere {
+    gap: 16px;
+    padding: 15px;
+  }
+
+  .welcome-sphere .shader-canvas {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .welcome-sphere h2 {
+    font-size: 1.25rem;
+  }
+
+  .welcome-sphere p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .floating-sphere.bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .floating-sphere .shader-canvas {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .sidebar-sphere {
+    padding: 10px 0;
+  }
+
+  .sidebar-sphere .shader-canvas {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .welcome-sphere {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .welcome-sphere .shader-canvas {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .welcome-sphere h2 {
+    font-size: 1.1rem;
+  }
+
+  .welcome-sphere p {
+    font-size: 0.8rem;
+  }
+}

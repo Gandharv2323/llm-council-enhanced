@@ -1,0 +1,125 @@
+.input-area-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-lg);
+    padding-top: var(--space-xl);
+    background: linear-gradient(to top, var(--bg-primary) 60%, transparent);
+    z-index: 20;
+}
+
+.input-form {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    border-radius: var(--radius-lg);
+    background: rgba(18, 18, 23, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.2s ease;
+}
+
+.input-form:focus-within {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 32px rgba(59, 130, 246, 0.15);
+}
+
+.input-wrapper {
+    flex: 1;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.message-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: none;
+    max-height: 200px;
+    outline: none;
+}
+
+.message-input::placeholder {
+    color: var(--text-tertiary);
+}
+
+.input-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.action-icon-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+}
+
+.action-icon-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-secondary);
+}
+
+.action-icon-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.send-button {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-gradient);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+}
+
+.send-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.animate-spin {
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.input-footer {
+    margin-top: var(--space-sm);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}

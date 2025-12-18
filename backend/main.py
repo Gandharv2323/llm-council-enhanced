@@ -12,8 +12,8 @@ import uuid
 import json
 import asyncio
 
-from . import storage
-from .council import run_full_council, generate_conversation_title, stage1_collect_responses, stage2_collect_rankings, stage3_synthesize_final, calculate_aggregate_rankings
+import storage
+from council import run_full_council, generate_conversation_title, stage1_collect_responses, stage2_collect_rankings, stage3_synthesize_final, calculate_aggregate_rankings
 
 app = FastAPI(title="LLM Council API")
 
@@ -221,7 +221,7 @@ async def delete_conversation(conversation_id: str):
 @app.get("/api/models")
 async def list_models():
     """List available council models."""
-    from .config import COUNCIL_MODELS, CHAIRMAN_MODEL
+    from config import COUNCIL_MODELS, CHAIRMAN_MODEL
     return {
         "council_models": COUNCIL_MODELS,
         "chairman_model": CHAIRMAN_MODEL
@@ -231,7 +231,7 @@ async def list_models():
 @app.post("/api/estimate")
 async def estimate_cost(request: SendMessageRequest):
     """Estimate cost and time for a query."""
-    from .config import COUNCIL_MODELS
+    from config import COUNCIL_MODELS
     
     # Estimate tokens
     input_tokens = len(request.content) // 4
@@ -266,7 +266,7 @@ async def send_message_enhanced(conversation_id: str, request: SendMessageReques
     """
     Send a message with enhanced epistemics (agreement, claims, calibration).
     """
-    from .council_enhanced import run_enhanced_council
+    from council_enhanced import run_enhanced_council
     
     conversation = storage.get_conversation(conversation_id)
     if conversation is None:

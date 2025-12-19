@@ -66,8 +66,12 @@ class Conversation(BaseModel):
 
 @app.get("/")
 async def root():
-    """Health check endpoint."""
-    return {"status": "ok", "service": "LLM Council API"}
+    """Serve frontend index.html at root."""
+    if FRONTEND_BUILD_DIR.exists():
+        index_path = FRONTEND_BUILD_DIR / "index.html"
+        if index_path.exists():
+            return FileResponse(str(index_path))
+    return {"status": "ok", "service": "LLM Council API", "message": "Frontend not built"}
 
 
 @app.get("/api/conversations", response_model=List[ConversationMetadata])

@@ -225,7 +225,7 @@ async def delete_conversation(conversation_id: str):
 @app.get("/api/models")
 async def list_models():
     """List available council models."""
-    from config import COUNCIL_MODELS, CHAIRMAN_MODEL
+    from backend.config import COUNCIL_MODELS, CHAIRMAN_MODEL
     return {
         "council_models": COUNCIL_MODELS,
         "chairman_model": CHAIRMAN_MODEL
@@ -235,7 +235,7 @@ async def list_models():
 @app.post("/api/estimate")
 async def estimate_cost(request: SendMessageRequest):
     """Estimate cost and time for a query."""
-    from config import COUNCIL_MODELS
+    from backend.config import COUNCIL_MODELS
     
     # Estimate tokens
     input_tokens = len(request.content) // 4

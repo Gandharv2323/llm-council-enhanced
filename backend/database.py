@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Optional
 from contextlib import contextmanager
 
-from schemas import CouncilMetrics
+from backend.schemas import CouncilMetrics
 
 
 class Database:

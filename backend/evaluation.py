@@ -8,14 +8,14 @@ import itertools
 import math
 from typing import Any
 
-from schemas import (
+from backend.schemas import (
     PairwiseComparison,
     ModelEvaluation,
     AggregatedScore,
     DisagreementResult,
     get_model_weight,
 )
-from openrouter import query_model
+from backend.openrouter import query_model
 
 
 PAIRWISE_EVALUATION_PROMPT = """Compare these two responses to the question: "{question}"

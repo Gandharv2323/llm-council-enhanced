@@ -7,8 +7,8 @@ import asyncio
 import json
 from typing import Optional
 
-from schemas import ExtractedClaim, ClaimExtractionResult
-from openrouter import query_model
+from backend.schemas import ExtractedClaim, ClaimExtractionResult
+from backend.openrouter import query_model
 
 
 CLAIM_EXTRACTION_PROMPT = """Analyze these responses to the question: "{question}"

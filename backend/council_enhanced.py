@@ -7,23 +7,23 @@ import time
 import hashlib
 from typing import List, Dict, Any, Tuple, Optional
 
-from council import (
+from backend.council import (
     stage1_collect_responses,
     stage2_collect_rankings,
     stage3_synthesize_final,
     calculate_aggregate_rankings
 )
-from evaluation import (
+from backend.evaluation import (
     compute_kendalls_w,
     detect_disagreement,
     aggregate_rankings,
     classify_query_domain,
     structured_ranking
 )
-from claims import extract_claims, format_claims_for_display
-from calibration import get_calibration_tracker
-from schemas import CouncilMetrics, DisagreementResult
-from config import COUNCIL_MODELS, CHAIRMAN_MODEL
+from backend.claims import extract_claims, format_claims_for_display
+from backend.calibration import get_calibration_tracker
+from backend.schemas import CouncilMetrics, DisagreementResult
+from backend.config import COUNCIL_MODELS, CHAIRMAN_MODEL
 
 
 async def run_enhanced_council(user_query: str) -> Dict[str, Any]:

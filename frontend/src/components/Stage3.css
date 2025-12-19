@@ -1,0 +1,33 @@
+.stage3 {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.final-response {
+  background: var(--glass-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.05);
+}
+
+.chairman-label {
+  color: var(--status-success);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.chairman-label::before {
+  content: '👑';
+}
+
+.final-text {
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
